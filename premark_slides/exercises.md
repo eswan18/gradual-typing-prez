@@ -1,3 +1,0 @@
-class: center, middle
-
-## Exercises

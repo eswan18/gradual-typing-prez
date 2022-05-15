@@ -1,6 +1,15 @@
 # Static Typing
 
 - **Statically-typed languages** enforce rules about what values can be assigned to a given variable.
+
+- More importantly, they are able to catch potential errors in source code by knowing the properties of the values involved.
+
+  - If that sounds vague, that's okay -- more on this later
+
+---
+
+# Static Typing
+
 - Typically, there is a mechanism for a programmer to specify the type of a variable when assigning to it.
 ```go
 var x int = 7
@@ -87,6 +96,18 @@ int
 
 ---
 
+# Examples of Statically-typed Languages
+
+- C, C++
+- Java
+- C#
+- Go
+- Haskell
+- ML
+- Swift
+
+---
+
 # Perks of Static Typing
 
 - Because the compiler knows the type of every variable throughout the code, it can raise **compile-time errors** when it detects the use a variable in an unsupported way.
@@ -97,4 +118,7 @@ int
 
   - Conventional wisdom is that as applications grow larger, the presence of type metadata in the source code (along with the compiler's enforcemnt of it) is more and more valuable.
 
-- The knowledge of types can also be used for things like autogenerating documentation and populating autocomplete in IDEs.
+- The knowledge of types can also be used for other purposes too:
+  - Tools that autogenerate documentation
+  - Populating autocomplete in IDEs
+  - Enabling compiler optimizations

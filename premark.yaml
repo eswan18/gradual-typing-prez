@@ -5,6 +5,4 @@ sections:
     title: Static Typing
   - file: dynamic-typing.md
     title: Dynamic Typing
-  - file: exercises.md
-    title: Exercises
 stylesheet: premark_assets/styles.css

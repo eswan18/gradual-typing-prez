@@ -6,11 +6,12 @@ class: center, middle
 
 # Agenda
 
-1. Static vs Dynamic Typing
-2. What is Gradual Typing?
-3. Type "Hints" in Python
-4. The Ecosystem of a Gradual Type System
-5. How to Apply This?
+1. Static Typing
+2. Dynamic Typing
+3. Gradual Typing
+4. Type "Hints" in Python
+5. The Ecosystem of a Gradual Type System
+6. How to Apply This?
 
 ---
 
@@ -18,4 +19,4 @@ class: center, middle
 
 1. Familiarity with statically-typed languages
 2. Familiarity with dynamically-typed languages
-3. Minimal exposure to basic Python code
+3. Some very basic exposure to Python code
