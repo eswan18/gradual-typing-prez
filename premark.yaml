@@ -1,0 +1,6 @@
+sections:
+  - file: template.md
+  - file: intro.md
+  - file: exercises.md
+    title: Exercises
+stylesheet: premark_assets/styles.css
