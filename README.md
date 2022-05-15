@@ -1,15 +1,17 @@
-# Module Template
+# Gradual Typing (in Python)
 
-This repo serves as the basis for new education slideshow modules that I build.
+This module is meant as a high-level introduction to the idea of gradual typing, using Python's type hints and [mypy](https://mypy.readthedocs.io/en/stable/) as an implementation to discuss, but not focusing too heavily on Python itself.
 
-Right now, I'm using [Premark](https://github.com/eswan18/premark), a fork of [Remarker](https://github.com/tylerdave/remarker), in which I've added the ability to stitch multiple "sections" together into a single slideshow.
 
-On a Unix-y system, build your presentation with:
+## Building the Slides
+
+This uses [Premark](https://github.com/eswan18/premark), a tool to generate a slide deck from multiple markdown files.
+Install Premark and then, on a Unix-system, build your presentation with:
 ```bash
 make slides
 ```
 
-Simply open the produced `slides.html` in your browser to see the slides.
+Then simply open the produced `slides.html` in your browser.
 
 ## Exporting to PDF
 
