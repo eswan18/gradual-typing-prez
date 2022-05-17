@@ -6,6 +6,11 @@
 
   - If that sounds vague, that's okay -- more on this later
 
+???
+
+- This is a simple definition.
+- Usually, the easiest way to think about what makes a language dynamic is that there are compile-time errors related to types.
+
 ---
 
 # Static Typing
@@ -14,6 +19,10 @@
 ```go
 var x int = 7
 ```
+
+???
+
+Typically but not always
 
 --
 
@@ -27,6 +36,10 @@ x = "hello world"
 ```
 
 - *(Subtypes are an exception to this rule.)*
+
+???
+
+Basically, the compiler is keeping you honest.
 
 ---
 
@@ -54,6 +67,12 @@ result = add(a, b)
 ./prog.go:10:11: cannot use add(a, b) (value of type float32) as type string in assignment
 ```
 
+???
+
+Ultimately, this is the main point of static typing.
+
+If the compiler knows all the types all (well, most) of the time, it can know at compile time whether your code will break because you passed an `int` to a function where a string was expected.
+
 ---
 
 # Static Typing
@@ -69,6 +88,13 @@ x = "hello world"
 ./prog.go:9:6: cannot use "hello world" (untyped string constant) as int value in assignment
 ```
 
+???
+
+My impression is that this is a feature of "modern" statically-typed languages.
+
+Programmers don't want to be writing obvious types on variable declarations over and over.
+If the compiler knows the type of the thing on the right, it can just assume that's the type of the variable.
+
 ---
 
 # Types
@@ -80,6 +106,13 @@ x = "hello world"
 
 - Many statically-typed languages support the idea of a **protocol** or **interface**, a set of functionality defined by the user that isn't linked to a particular instantiable class/struct.
   - e.g. Any object that supports a `read` method.
+
+
+???
+
+It's actually kind of hard to define "type" in everyday language but programmers usually know it when they see it.
+
+What's x? A string. Or an array of ints. Or a payload struct.
 
 ---
 
@@ -94,6 +127,10 @@ fmt.Printf("%T", x)
 int
 ```
 
+???
+
+Good time to shout out untyped languages, like some shell languages. In bash everything is a string and it is very frustrating sometimes.
+
 ---
 
 # Examples of Statically-typed Languages
@@ -103,8 +140,13 @@ int
 - C#
 - Go
 - Haskell
-- ML
 - Swift
+
+???
+
+You will not be surprised to learn that this list isn't exhaustive.
+
+Also, it's no coincidence that all but Haskell are mostly targeted at large, performance-sensitive application development.
 
 ---
 
@@ -122,3 +164,11 @@ int
   - Tools that autogenerate documentation
   - Populating autocomplete in IDEs
   - Enabling compiler optimizations
+
+???
+
+There's probably more too.
+
+Ultimately, my experience is that most static typing partisans value the compile-time errors the most.
+
+Even among dynamic language users, the view that "large applications become very difficult without static type checking" is common.
