@@ -5,4 +5,6 @@ sections:
     title: Static Typing
   - file: dynamic-typing.md
     title: Dynamic Typing
+  - file: gradual-typing.md
+    title: Gradual Typing
 stylesheet: premark_assets/styles.css

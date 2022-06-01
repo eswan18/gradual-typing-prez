@@ -99,26 +99,23 @@ If the compiler knows the type of the thing on the right, it can just assume tha
 
 # Types
 
-- The idea of a "type" is somewhat abstract and an entire subject unto itself (see **Type Theory**), but in practice it can usually be thought of as the set of fields (and methods, in OO languages) that define a certain class of objects
-  - In fact, the distinction between *class* and *type* can be pretty fuzzy in languages with classes.
-
-- So... a struct definition is a type, a class is a type, built-in primitives are types.
+- The idea of a "type" is somewhat abstract, but in practice it can usually be thought of as the *interface* of an object
+  - That is: the set of accessible fields (and methods, in OO languages) guaranteed to be present on a given object
+  - All classes are types under this definition, but there are types that aren't classes
 
 - Many statically-typed languages support the idea of a **protocol** or **interface**, a set of functionality defined by the user that isn't linked to a particular instantiable class/struct.
   - e.g. Any object that supports a `read` method.
 
 
-???
-
-It's actually kind of hard to define "type" in everyday language but programmers usually know it when they see it.
-
-What's x? A string. Or an array of ints. Or a payload struct.
-
 ---
 
 # Types
 
-- Every value has a type (in most languages), and if the language supports introspection it may be possible to determine at runtime.
+- The class/type distinction gets blurred when you ask for the "type" of an object -- usually you're asking for its parent class, or what kind of primitive it is
+
+  - As opposed to what interfaces it implements
+
+- Through introspection, some languages let you get this info at runtime (but some don't!)
 ```go
 var x = 7
 fmt.Printf("%T", x)

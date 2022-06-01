@@ -118,15 +118,17 @@ int
 
 ---
 
-# Some Other Points on Typing
+# Related: Strong vs Weak Typing
 
-- Static and dynamic typing are opposites, but there is something of a spectrum -- some statically-typed languages are stricter than others
+- **Strong typing** and **weak typing** are sometimes used synonymously with static and dynamic typing, but more commonly (arguably properly) refer to something else: how often and silently values are coerced to other types (and are also a spectrum).
+
+- From Wikipedia:
+> A weakly typed language has looser typing rules and may produce unpredictable or even erroneous results or may perform implicit type conversion at runtime.
+
 
 ---
 
-# Some Other Points on Typing
-
-- **Strong typing** and **weak typing** are often used as synonymous with static and dynamic typing, but my understanding is that they more properly refer to something else: how often and silently values are coerced to other types (and are also a spectrum).
+# Related: Strong vs Weak Typing
 
 - C is statically-typed but pretty weak:
 ```c
