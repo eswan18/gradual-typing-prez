@@ -102,17 +102,41 @@ Note that Ruby 3 has introduced a new standard type file format, RBS. I haven't 
 
 # Mypy
 
-.flex[
-.half-flex-container[
 - Mypy is fairly mature and a good example of a typechecker
 
 - Takes advantage of Python's "annotation" syntax, which the Python interpreter ignores entirely
+
+.flex[
+.half-flex-container[
+```python
+# concat.py
+def concat(s1: str, s2: str) -> str:
+    return s1 + ' ' + s2
+
+concat('abc', 'def')
+```
+```text
+$ mypy
+
+Success: no issues found in 1 source file
+```
 ]
 .half-flex-container[
 ```python
+# concat.py
 def concat(s1: str, s2: str) -> str:
     return s1 + ' ' + s2
+
+concat('abc', 7)
 ```
+.allow-wrap[
+```text
+$ mypy
+
+concat.py:4: error: Argument 2 to "concat" has incompatible type "int"; expected "str"
+Found 1 error in 1 file (checked 1 source file)
+```
+]
 ]
 ]
 
