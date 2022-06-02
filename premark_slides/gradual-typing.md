@@ -30,16 +30,17 @@
 
 - The notion of combining untyped code with *some* type annotations is **gradual typing**.
 
-```python
-def add(x: int, y: int) -> int:
-    return x + y
+    ```python
+    def add(x: int, y: int) -> int:
+        return x + y
 
-def subtract(x, y):
-    return x - y
+    def subtract(x, y):
+        return x - y
 
-result = add(subtract(4, 3), 41)
-print(result)
-```
+    result = add(subtract(4, 3), 41)
+    print(result)
+    ```
+
 - The idea is that types can be "gradually" added to a codebase, as needed
 
 - I think of the "truly" gradually-typed languages as the ones that don't require any annotations at all if you don't want them -- though that's not the precise definition
@@ -95,20 +96,20 @@ Note that Ruby 3 has introduced a new standard type file format, RBS. I haven't 
 
 - Takes advantage of Python's "annotation" syntax, which the Python interpreter ignores entirely
 
-```python
-def concat(s1: str, s2: str) -> str:
-    return s1 + ' ' + s2
-```
+    ```python
+    def concat(s1: str, s2: str) -> str:
+        return s1 + ' ' + s2
+    ```
 
 --
 
 - Because Python itself ignores these annotations, they don't help at runtime. This is valid Python and will run without warning or error
 
-```python
-def mystify(x: float, y: float) -> bool:
-    return x.upper()
+    ```python
+    def mystify(x: float, y: float) -> bool:
+        return x.upper()
 
-result: int = mystify('abc', 'def')
-```
+    result: int = mystify('abc', 'def')
+    ```
 
 - Python runs the code as if there were no annotations at all

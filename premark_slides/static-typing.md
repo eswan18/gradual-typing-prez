@@ -46,26 +46,26 @@ Basically, the compiler is keeping you honest.
 # Static Typing
 
 - In statically-typed languages, function parameters and return values are generally typed as well.
-```go
-func add(x float32, y float32) float32 {
-	  return x + y
-}
-```
+    ```go
+    func add(x float32, y float32) float32 {
+          return x + y
+    }
+    ```
 
 --
 
 - This allows the compiler or interpreter to reason through the entire data flow, verifying that functions receive the expected inputs, and that their outputs are assigned to variables of the proper type.
 
-```go
-var a float32 = 3.4
-var b float32 = 3.8
+    ```go
+    var a float32 = 3.4
+    var b float32 = 3.8
 
-var result string
-result = add(a, b)
-```
-```text
-./prog.go:10:11: cannot use add(a, b) (value of type float32) as type string in assignment
-```
+    var result string
+    result = add(a, b)
+    ```
+    ```text
+    ./prog.go:10:11: cannot use add(a, b) (value of type float32) as type string in assignment
+    ```
 
 ???
 
