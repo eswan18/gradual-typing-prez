@@ -153,18 +153,24 @@ Also, it's no coincidence that all but Haskell are mostly targeted at large, per
 
 # Perks of Static Typing
 
-- Because the compiler knows the type of every variable throughout the code, it can raise **compile-time errors** when it detects the use a variable in an unsupported way.
+.flex[
+.half-flex-container[
+- The compiler can raise errors **before runtime**
 
   - e.g. a method/attribute is accessed that doesn't actually exist on the object
 
-- This helps to catch bugs that might be hard to find with traditional testing approaches.
+- Can catch bugs that might be hard to find with traditional testing
 
-  - Conventional wisdom is that as applications grow larger, the presence of type metadata in the source code (along with the compiler's enforcemnt of it) is more and more valuable.
+- Conventional wisdom is that as applications grow larger, the presence of type metadata in the source code (along with the compiler's enforcement of it) is more and more valuable.
+]
+.half-flex-container[
 
 - The knowledge of types can also be used for other purposes too:
   - Tools that autogenerate documentation
   - Populating autocomplete in IDEs
   - Enabling compiler optimizations
+]
+]
 
 ???
 

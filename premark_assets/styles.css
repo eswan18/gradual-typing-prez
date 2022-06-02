@@ -90,3 +90,9 @@ div.slide-footer img {
 .premark-prez-title > p {
     font-size: 2rem;
 }
+
+/* Indent "text" as much as regular code */
+code.text {
+    padding: .5em;
+    display: block;
+}

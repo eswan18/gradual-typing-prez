@@ -28,22 +28,31 @@
 
 # Gradual Typing
 
+.flex[
+.half-flex-container[
 - The notion of combining untyped code with *some* type annotations is **gradual typing**.
-
-    ```python
-    def add(x: int, y: int) -> int:
-        return x + y
-
-    def subtract(x, y):
-        return x - y
-
-    result = add(subtract(4, 3), 41)
-    print(result)
-    ```
 
 - The idea is that types can be "gradually" added to a codebase, as needed
 
-- I think of the "truly" gradually-typed languages as the ones that don't require any annotations at all if you don't want them -- though that's not the precise definition
+- Personally, I think of the "truly" gradually-typed languages as the ones that don't require any annotations at all if you don't want them
+]
+.half-flex-container[
+```python
+def add(x: int, y: int) -> int:
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+result = add(subtract(4, 3), 41)
+print(result)
+```
+
+```text
+42
+```
+]
+]
 
 ???
 
@@ -58,8 +67,9 @@ Silly, though -- you can't "gradually" do much unless you've already added that 
 - There are some languages with dynamic typing built-in, but (to me) it seems like these are pretty uncommon
 
 - A more common case is "precompilers" that convert and typecheck code before transpiling it down to a common dynamic language
-    - TypeScript (with certain compiler options, plain JS is valid), compiles to JavaScript
-    - Hack, compiles to PHP
+    - TypeScript compiles to JavaScript
+        - with certain compiler options, unannotated JS is valid TypeScript
+    - Hack compiles to PHP
 
 ???
 
@@ -92,24 +102,41 @@ Note that Ruby 3 has introduced a new standard type file format, RBS. I haven't 
 
 # Mypy
 
+.flex[
+.half-flex-container[
 - Mypy is fairly mature and a good example of a typechecker
 
 - Takes advantage of Python's "annotation" syntax, which the Python interpreter ignores entirely
+]
+.half-flex-container[
+```python
+def concat(s1: str, s2: str) -> str:
+    return s1 + ' ' + s2
+```
+]
+]
 
-    ```python
-    def concat(s1: str, s2: str) -> str:
-        return s1 + ' ' + s2
-    ```
+---
 
---
+# Mypy
 
-- Because Python itself ignores these annotations, they don't help at runtime. This is valid Python and will run without warning or error
-
-    ```python
-    def mystify(x: float, y: float) -> bool:
-        return x.upper()
-
-    result: int = mystify('abc', 'def')
-    ```
-
+.flex[
+.half-flex-container[
 - Python runs the code as if there were no annotations at all
+- So ... this is valid Python and will run without warning or error
+- The methods and operators used are all valid **at runtime**, despite their clash with the annotations
+]
+.half-flex-container[
+```python
+def mystify(x: float, y: float) -> bool:
+    return x.upper()
+
+result: int = mystify('abc', 'def')
+print(result)
+```
+```text
+ABC
+```
+]
+]
+

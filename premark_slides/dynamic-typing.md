@@ -52,11 +52,17 @@ AttributeError: 'int' object has no attribute 'upper'
 
 # Duck Typing
 
+.flex[
+.half-flex-container[
 - If the data types involved support the operations you call on them (like addition, or a method, etc.), then assume everything is okay. 
+- Why? Allows users to create new types that adhere to an implicit protocol, such as by overriding the `+` operator to "act like" a string.
+]
+.half-flex-container[
 ```python
-    def add(x, y):
-        return x + y
+def add(x, y):
+    return x + y
 ```
+<br>
 ```python
 add(1, 4)
 ```
@@ -69,10 +75,8 @@ add("hello", " world")
 ```text
 "hello world"
 ```
-
---
-
-- Why? Allows users to create new types that adhere to an implicit protocol, such as by overriding the `+` operator to "act like" a string.
+]
+]
 
 ---
 
