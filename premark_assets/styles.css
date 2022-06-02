@@ -7,7 +7,10 @@ h1, h2, h3 {
    font-family: 'Yanone Kaffeesatz';
    font-weight: normal;
 }
-.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+.remark-code, .remark-inline-code {
+    font-family: 'Ubuntu Mono';
+}
 
 div.my-header {
     border-bottom: 1px solid #ccc;
@@ -63,10 +66,27 @@ div.slide-footer img {
 .column:first-of-type {width: 40%}
 .column:last-of-type {width: 60%}
 
-.cols {
+.flex {
     display: flex;
 }
+.half-flex-container {
+    flex: 46%;
+    min-width: 46%;
+    margin: 2%;
+}
+.allow-wrap div {
+    white-space: normal;
+}
 
-.fifty {
-    flex: 50%;
+.premark-section-title > h1 {
+    font-size: 7rem;
+}
+.premark-section-title > h2 {
+    font-size: 4rem;
+}
+.premark-prez-title > h1 {
+    font-size: 7rem;
+}
+.premark-prez-title > p {
+    font-size: 2rem;
 }

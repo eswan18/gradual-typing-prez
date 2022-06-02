@@ -14,32 +14,36 @@
 ---
 
 # Static Typing
+.flex[
 
-- Typically, there is a mechanism for a programmer to specify the type of a variable when assigning to it.
+.half-flex-container[
+Typically, there is a mechanism for a programmer to specify the type of a variable when assigning to it.
 ```go
 var x int = 7
 ```
+]
+
+.half-flex-container[
+In most cases, assigning an object of a different type to that variable will fail.
+```go
+var x int = 7
+x = "hello world"
+```
+.allow-wrap[
+```text
+./prog.go:9:6: cannot use "hello world" (untyped string constant) as int value in assignment
+```
+]
+]
+
+]
 
 ???
 
 Typically but not always
 
---
-
-- In most cases, assigning an object of a different type to that variable will fail.
-```go
-var x int = 7
-x = "hello world"
-```
-```text
-./prog.go:9:6: cannot use "hello world" (untyped string constant) as int value in assignment
-```
-
-- *(Subtypes are an exception to this rule.)*
-
-???
-
 Basically, the compiler is keeping you honest.
+
 
 ---
 
