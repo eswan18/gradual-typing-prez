@@ -1,6 +1,6 @@
 class: center, middle, premark-prez-title
 
-# Gradual Typing (in Python)
+# &nbsp;&nbsp;&nbsp;&nbsp;Gradual Typing&nbsp;&nbsp;&nbsp;&nbsp; (in Python)
 
 Ethan Swan
 

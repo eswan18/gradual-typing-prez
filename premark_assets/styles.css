@@ -1,15 +1,15 @@
-@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+@import url('https://fonts.googleapis.com/css2?family=Enriqueta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Enriqueta&family=Source+Code+Pro&display=swap');
 
 body { font-family: 'Droid Serif'; }
 h1, h2, h3 {
-   font-family: 'Yanone Kaffeesatz';
+   font-family: 'Enriqueta', serif;
    font-weight: normal;
 }
 
 .remark-code, .remark-inline-code {
-    font-family: 'Ubuntu Mono';
+    font-family: 'Source Code Pro', monospace;
 }
 
 div.my-header {
@@ -79,7 +79,7 @@ div.slide-footer img {
 }
 
 .premark-section-title > h1 {
-    font-size: 7rem;
+    font-size: 6rem;
 }
 .premark-section-title > h2 {
     font-size: 4rem;
