@@ -2,9 +2,7 @@
 
 - **Dynamically-typed languages** don't worry about types until runtime.
 
-- They usually don't support a way to annotate variables with types.
-
-- They usually don't allow function parameters and return values to be typed.
+- They *usually* don't support any type annotations
 
 ---
 
@@ -21,7 +19,14 @@ x = "hello world"
 
 # Dynamic Typing
 
-- The compiler/interpreter knows nothing about the types of values in the code until runtime. It just executes the code and if it discovers the value doesn't have a method or attribute that it needs, *then* it complains.
+- The compiler/interpreter knows nothing about the types until runtime.
+
+- It just executes the code and if works, it works!
+
+    - If it discovers the value doesn't support a requested method or attribute that it needs, *then* it complains.
+
+<br>
+
 ```python
 x = 7
 # .upper() is a method of strings
@@ -31,9 +36,11 @@ x.upper()
 AttributeError: 'int' object has no attribute 'upper'
 ```
 
---
+---
 
-- For example, even obviously-incorrect code, if within an as-yet-unexecuted function, causes no errors:
+# Dynamic Typing
+
+- Even obviously-incorrect code, if within an as-yet-unexecuted function, causes no errors:
 ```python
     def capitalize_seven():
         x = 7
@@ -80,9 +87,34 @@ add("hello", " world")
 
 ---
 
+# Duck Typing
+
+- The primary recommendation of duck typing is not to explicity check the types of things
+
+- Sometimes abbreviated **EAFP** -- easier to ask *forgiveness* than *permission*
+
+```python
+def raise_to_power(base, power):
+    if not isinstance(base, (float, int)):
+        raise Exception
+    if not isinstance(base, (float, int)):
+        raise Exception
+    return base ** power
+```
+
+--
+
+- Explicit type checks make for lots of additional verbosity
+
+- Also, this function will error on complex numbers, user-defined numeric types, and more
+
+    - Duck typing enthusiasts would say you should just try to do the operations and see what happens
+
+---
+
 # Dynamic Typing
 
-- All the dynamic languages I'm aware of offer introspection, so you can determine the type of a value if you need to.
+- Dynamic languages usually offer **introspection**, so you can determine the type of a value if you need to.
 ```python
 x = 7
 type(x)
@@ -96,7 +128,7 @@ int
 
 ---
 
-# Examples of Dynamically-typed Languages
+# Some Dynamically-typed Languages
 
 - JavaScript
 - Python
@@ -114,7 +146,7 @@ int
 
   - Debatable if it's still faster as codebases get larger
 
-- Avoids a whole class of complexity -- things like unions, generics, bounds, protocols
+- Avoids a whole class of complexity for users -- things like unions, generics, bounds, protocols
 
   - Simpler for new developers, especially those coming from other fields
 
@@ -124,7 +156,7 @@ int
 
 # Related: Strong vs Weak Typing
 
-- **Strong typing** and **weak typing** are sometimes used synonymously with static and dynamic typing, but more commonly (arguably properly) refer to something else: how often and silently values are coerced to other types (and are also a spectrum).
+- **Strong typing** and **weak typing** are sometimes used synonymously with static and dynamic typing, but more commonly (arguably *properly*) refer to something else: how often and silently values are coerced to other types (and are also a spectrum).
 
 - From Wikipedia:
 > A weakly typed language has looser typing rules and may produce unpredictable or even erroneous results or may perform implicit type conversion at runtime.
@@ -146,7 +178,7 @@ int result = x + c;
 ```python
 c = "a"
 x = 7
-x + c
+result = x + c
 ```
 ```text
 TypeError: unsupported operand type(s) for +: 'int' and 'str'

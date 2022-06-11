@@ -58,7 +58,7 @@ Basically, the compiler is keeping you honest.
 
 --
 
-- This allows the compiler or interpreter to reason through the entire data flow, verifying that functions receive the expected inputs, and that their outputs are assigned to variables of the proper type.
+- This allows the compiler or interpreter to reason through the entire data flow and anticipate what could go wrong.
 
     ```go
     var a float32 = 3.4
@@ -79,11 +79,11 @@ If the compiler knows all the types all (well, most) of the time, it can know at
 
 ---
 
-# Static Typing
+# Type Inference
 
-- Some modern statically-typed languages don't require the programmer to explicitly describe the type of a variable if it can be determined from context; this process is called **type inference**
+- Some modern statically-typed languages don't require the programmer to explicitly describe the type of a variable if it can be determined from context
 
-- However, this doesn't make them any less statically typed. Below, `x` is never marked as an `int` in the code but we still get the same error -- because the compiler knows it's an `int` based on its initial value
+- However, this doesn't make them any less statically typed. Below, `x` is never marked as an `int` in the code but we still get the same error:
 ```go
 var x = 7
 x = "hello world"
@@ -107,6 +107,8 @@ If the compiler knows the type of the thing on the right, it can just assume tha
   - That is: the set of accessible fields (and methods, in OO languages) guaranteed to be present on a given object
   - All classes are types under this definition, but there are types that aren't classes
 
+--
+
 - Many statically-typed languages support the idea of a **protocol** or **interface**, a set of functionality defined by the user that isn't linked to a particular instantiable class/struct.
   - e.g. Any object that supports a `read` method.
 
@@ -117,7 +119,7 @@ If the compiler knows the type of the thing on the right, it can just assume tha
 
 - The class/type distinction gets blurred when you ask for the "type" of an object -- usually you're asking for its parent class, or what kind of primitive it is
 
-  - As opposed to what interfaces it implements
+  - As opposed to what *interfaces* it implements
 
 - Through introspection, some languages let you get this info at runtime (but some don't!)
 ```go
@@ -134,7 +136,7 @@ Good time to shout out untyped languages, like some shell languages. In bash eve
 
 ---
 
-# Examples of Statically-typed Languages
+# Some Statically-typed Languages
 
 - C, C++
 - Java

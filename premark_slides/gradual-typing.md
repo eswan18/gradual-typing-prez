@@ -67,9 +67,9 @@ Silly, though -- you can't "gradually" do much unless you've already added that 
 - There are some languages with dynamic typing built-in, but (to me) it seems like these are pretty uncommon
 
 - A more common case is "precompilers" that convert and typecheck code before transpiling it down to a common dynamic language
-    - TypeScript compiles to JavaScript
-        - with certain compiler options, unannotated JS is valid TypeScript
-    - Hack compiles to PHP
+    - TypeScript -> JavaScript
+        - depending on compiler options, unannotated JS is valid TypeScript
+    - Hack -> PHP
 
 ???
 
@@ -146,7 +146,7 @@ Found 1 error in 1 file (checked 1 source file)
 
 .flex[
 .half-flex-container[
-- Python runs the code as if there were no annotations at all
+- Python itself runs the code as if there were no annotations at all
 - So ... this is valid Python and will run without warning or error
 - The methods and operators used are all valid **at runtime**, despite their clash with the annotations
 ]
