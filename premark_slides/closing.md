@@ -24,11 +24,25 @@
 
 - Big ones:
 
-    - **Pyre** -- Facebook
+    - **Pyre** (Facebook)
 
-    - **Pytype** -- Google
+    - **Pytype** (Google)
 
-    - **Pyright** -- Microsoft
+    - **Pyright** (Microsoft)
+
+---
+
+# Type Hints for Security
+
+- Type hints can be used for static analysis of potential vulnerabilities
+
+- Example: Starting in 3.11 (2022), Python will have a `LiteralString` type (PEP 675)
+
+    - Helps disambiguate string literals from user inputs, values from a file, etc
+
+    - Analysis tools can flag non-literal strings as "unsafe" in situations like SQL interpolation
+
+- Good talk from Meta on using this in production with Pyre: https://youtu.be/nRt_xk2MGYU
 
 ---
 
@@ -48,3 +62,21 @@
     from typing import List
     List[str]
     ```
+
+---
+
+# Where Python is Going
+
+- Large-scale Python projects are increasingly adding type hints, at least where feasible
+
+    - Worth being familiar *at least* to read others' Python code
+
+- The Python ecosystem is adding more support and convenience every year
+
+- Libraries like FastAPI, Pydantic, and more are integrating typing in ways that make code simpler and more concise (and sometimes faster!)
+
+---
+class: center, middle
+
+# Thanks!
+## Questions?
