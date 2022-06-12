@@ -7,4 +7,8 @@ sections:
     title: Dynamic Typing
   - file: gradual-typing.md
     title: Gradual Typing
+  - file: typing-python.md
+    title: Typing a Python Codebase
+  - file: closing.md
+    title: Closing Thoughts
 stylesheet: premark_assets/styles.css

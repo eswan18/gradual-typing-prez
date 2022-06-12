@@ -11,9 +11,8 @@ class: center, middle, premark-prez-title
 1. Static Typing
 2. Dynamic Typing
 3. Gradual Typing
-4. Type "Hints" in Python
-5. The Ecosystem of a Gradual Type System
-6. How to Apply This?
+4. Typing a Python Codebase
+5. Closing Thoughts
 
 ---
 

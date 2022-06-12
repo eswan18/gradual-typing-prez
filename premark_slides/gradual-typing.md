@@ -274,19 +274,3 @@ test.py:3: error: Argument 1 to "mystify" has incompatible type "str"; expected 
 test.py:3: error: Argument 2 to "mystify" has incompatible type "str"; expected "float"
 Found 3 errors in 1 file (checked 1 source file)
 ```
-
----
-
-# Gradual Typing in Ruby
-
-- I don't have personal experience with typing in Ruby, but did a bit of research on it
-
-- The most popular typechecker is Sorbet
-
-    - Created by Stripe
-
-- Sorbet can use both:
-
-    - Inline annotations (e.g. `sig {params(x: Integer).returns(String)}`)
-
-    - Separate `.rbi` files that complement the source code
