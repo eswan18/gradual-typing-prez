@@ -100,11 +100,88 @@ Note that Ruby 3 has introduced a new standard type file format, RBS. I haven't 
 
 ---
 
+# The `Any` Type
+
+- One key aspect of gradual typing is the presence of a special type, which I will call `Any`
+
+- Objects of type `Any` are considered always-consistent, regardless of situation.
+
+- Typecheckers allow:
+
+    - Calls to any method or accesses of any attribute on `Any` objects
+
+    - Objects of type `Any` to be passed to any function and assigned to any variable
+
+---
+
+# The `Any` Type
+
+To a gradual typechecker, this code raises no errors.
+
+
+```python
+def dostuff(x: Any, y: Any) -> int:
+    x = x.lower()
+    x = x + y
+    return x ** 2
+
+dostuff(True, False)
+```
+- addition, `.lower()`, and powers are all valid on `Any` objects
+
+- `x ** 2` can be returned where an `int` is expected because it's of type `Any`
+
+- Passing `True` into a function expecting `Any` is allowed
+
+---
+
+# The `Any` Type
+
+- The presence of `Any` is vital for gradual typing because it can be applied to all unannotated code, and that code will necessarily be valid.
+
+- This means that code without annotations is fine; only annotated code can result in typing errors.
+
+    - In this way, a codebase can be *gradually* typed as annotations are added to more and more files.
+
+- Luciano Ramalho's *Fluent Python* provides an excellent explanation of this topic.
+
+---
+
+# Gradual Typing in Python
+
+- Since version 3.0 (2008), Python has supported inline annotations for variables and functions
+
+    - Not specifically for the purpose of typing, but now that's how they're usually used
+
+- The Python interpreter itself basically ignores these annotations
+
+    - The idea is that static analysis tools, or third party libraries, can use the annotations to reason about code
+
+---
+
+# Gradual Typing in Python
+
+- Today, annotations are almost exclusively used to denote types
+
+```python
+def multiply(n1: int | float, n2: int | float) -> int | float:
+    result = n1 * n2
+    return result
+
+x: int = 5
+y: float = 3.4
+product: int | float = multiply(x, y)
+```
+
+---
+
 # Mypy
 
-- Mypy is fairly mature and a good example of a typechecker
+- Mypy is the most popular typechecker in Python
 
-- Takes advantage of Python's "annotation" syntax, which the Python interpreter ignores entirely
+    - There are others, which come with different tradeoffs
+
+- It's run as an independent executable -- not as part of running the program
 
 .flex[
 .half-flex-container[
@@ -116,7 +193,7 @@ def concat(s1: str, s2: str) -> str:
 concat('abc', 'def')
 ```
 ```text
-$ mypy
+$ mypy concat.py
 
 Success: no issues found in 1 source file
 ```
@@ -131,7 +208,7 @@ concat('abc', 7)
 ```
 .allow-wrap[
 ```text
-$ mypy
+$ mypy concat.py
 
 concat.py:4: error: Argument 2 to "concat" has incompatible type "int"; expected "str"
 Found 1 error in 1 file (checked 1 source file)
@@ -148,10 +225,12 @@ Found 1 error in 1 file (checked 1 source file)
 .half-flex-container[
 - Python itself runs the code as if there were no annotations at all
 - So ... this is valid Python and will run without warning or error
-- The methods and operators used are all valid **at runtime**, despite their clash with the annotations
+- In this case, the methods and operators are all valid **at runtime** despite their clash with the annotations
 ]
 .half-flex-container[
 ```python
+# mystify.py
+
 def mystify(x: float, y: float) -> bool:
     return x.upper()
 
@@ -159,8 +238,55 @@ result: int = mystify('abc', 'def')
 print(result)
 ```
 ```text
+$ python mystify.py
+
 ABC
 ```
 ]
 ]
 
+---
+
+# Mypy
+
+.flex[
+.half-flex-container[
+- Mypy, however, isn't happy
+]
+.half-flex-container[
+```python
+# mystify.py
+
+def mystify(x: float, y: float) -> bool:
+    return x.upper()
+
+result: int = mystify('abc', 'def')
+print(result)
+```
+]
+]
+
+```text
+$ mypy mystify.py
+
+test.py:2: error: "float" has no attribute "upper"
+test.py:3: error: Argument 1 to "mystify" has incompatible type "str"; expected "float"
+test.py:3: error: Argument 2 to "mystify" has incompatible type "str"; expected "float"
+Found 3 errors in 1 file (checked 1 source file)
+```
+
+---
+
+# Gradual Typing in Ruby
+
+- I don't have personal experience with typing in Ruby, but did a bit of research on it
+
+- The most popular typechecker is Sorbet
+
+    - Created by Stripe
+
+- Sorbet can use both:
+
+    - Inline annotations (e.g. `sig {params(x: Integer).returns(String)}`)
+
+    - Separate `.rbi` files that complement the source code
