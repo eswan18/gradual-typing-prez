@@ -76,7 +76,7 @@
 - Libraries like FastAPI, Pydantic, and more are integrating typing in ways that make code simpler and more concise (and sometimes faster!)
 
 ---
-class: center, middle
+class: middle
 
 # Thanks!
 ## Questions?

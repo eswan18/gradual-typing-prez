@@ -35,8 +35,6 @@ def read_data(filename: str) -> str:
 
 - Both `Optional` and `Union` must be imported from the built-in `typing` library 
 
-    - This is common with special type annotations
-
 ---
 
 # `Union` and `Optional`

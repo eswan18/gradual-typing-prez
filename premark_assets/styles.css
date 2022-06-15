@@ -2,8 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Enriqueta&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Enriqueta&family=Source+Code+Pro&display=swap');
 
-body { font-family: 'Droid Serif'; }
-h1, h2, h3 {
+h1, h2, h3, body {
    font-family: 'Enriqueta', serif;
    font-weight: normal;
 }
@@ -24,10 +23,12 @@ div.my-header {
 }
 
 div.slide-footer img {
-	height: 40px;
-	bottom: 0px;
+	left: 0px;
 	right: 0px;
+	bottom: 0px;
+	height: 25px;
 	position: fixed;
+    padding: 5px;
 }
 
 div.slide-footer {
@@ -38,21 +39,16 @@ div.slide-footer {
 	position: fixed;
 	bottom: 0px;
 	left: 0px;
-	height: 45px;
+	height: 35px;
 	width: 100%;
 }
 
-div.slide-footer p {
-    margin-top: 10px;
-    height: 30px;
-}
-
-div.slide-footer img {
-	height: 35px;
-	bottom: 0px;
-    padding: 5px;
-	left: 0px;
-	position: fixed;
+div.remark-slide-number {
+    font-size: 18px;
+    color: white;
+    opacity: .9;
+    bottom: 8px;
+    font-family: 'Droid Serif';
 }
 
 .remark-slide-content li {
@@ -78,19 +74,34 @@ div.slide-footer img {
     white-space: normal;
 }
 
+.premark-section-title > h1, h2, h3 {
+    float: left;
+    clear: both;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+}
 .premark-section-title > h1 {
     font-size: 5rem;
 }
 .premark-section-title > h2 {
-    font-size: 4rem;
+    font-size: 5rem;
+}
+.premark-prez-title > h1, h2, h3 {
+    float: left;
+    clear: both;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
 }
 .premark-prez-title > h1 {
-    font-size: 6rem;
+    font-size: 4rem;
 }
 .premark-prez-title > p {
     font-size: 2rem;
 }
-
+/* Make *all* code have a background, not just highlighted blocks */
+code {
+    background-color: rgba(130, 130, 130, 0.1);
+}
 /* Indent "text" as much as regular code */
 code.text {
     padding: .5em;
