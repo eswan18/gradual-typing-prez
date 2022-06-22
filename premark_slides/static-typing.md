@@ -1,8 +1,8 @@
 # Static Typing
 
-- **Statically-typed languages** enforce rules about what values can be assigned to a given variable.
+- **Statically-typed languages** enforce certain rules before runtime, based on the types of the values involved.
 
-- More importantly, they are able to catch potential errors in source code by knowing the properties of the values involved.
+- Usually that means they are able to catch potential errors in source code by knowing the properties of the relevant types.
 
   - If that sounds vague, that's okay -- more on this later
 
@@ -81,7 +81,7 @@ If the compiler knows all the types all (well, most) of the time, it can know at
 
 # Type Inference
 
-- Some modern statically-typed languages don't require the programmer to explicitly describe the type of a variable if it can be determined from context
+- Some modern statically-typed languages don't require the programmer to explicitly specify a type if it can be determined from context
 
 - However, this doesn't make them any less statically typed. Below, `x` is never marked as an `int` in the code but we still get the same error:
 ```go
